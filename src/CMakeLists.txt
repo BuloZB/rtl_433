@@ -232,6 +232,7 @@ add_library(r_433 STATIC
     devices/regency_fan.c
     devices/revolt_nc5462.c
     devices/revolt_zx7717.c
+    devices/rfm69_lowpowerlab_moteino.c
     devices/rftech.c
     devices/risco_agility.c
     devices/rojaflex.c
@@ -247,6 +248,7 @@ add_library(r_433 STATIC
     devices/secplus_v1.c
     devices/secplus_v2.c
     devices/sharp_spc775.c
+    devices/shenzhen_wale_wl_th6r.c
     devices/siemens_5wy72xx.c
     devices/silvercrest.c
     devices/simplisafe.c

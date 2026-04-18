@@ -10,20 +10,22 @@ Actively tested and supported are Realtek RTL2832 based DVB dongles (using RTL-S
 
 ![rtl_433 screenshot](./docs/screenshot.png)
 
-## Building / Installation
+## Building
 
-rtl_433 is written in portable C (C99 standard) and known to compile on Linux (also embedded), MacOS, and Windows systems.
+rtl_433 is written in portable C (C99 standard) and known to compile on Linux (also embedded), FreeBSD, MacOS, and Windows systems.
 Older compilers and toolchains are supported as a key-goal.
-Low resource consumption and very few dependencies allow rtl_433 to run on embedded hardware like (repurposed) routers.
-Systems with 32-bit i686 and 64-bit x86-64 as well as (embedded) ARM, like the Raspberry Pi and PlutoSDR are well supported.
+Low resource consumption and very few dependencies allow rtl_433 to run on embedded hardware.
+Most common 32-bit and 64-bit CPU architectures like amd64, arm64, armhf, i386, ppc64el, riscv64, s390x and others are well supported.
 
 See [BUILDING.md](docs/BUILDING.md)
 
-On Debian (sid) or Ubuntu (19.10+), `apt-get install rtl-433` for other distros check https://repology.org/project/rtl-433/versions
+## Installation
 
-On FreeBSD, `pkg install rtl-433`.
+Linux (Debian, Ubuntu): `sudo apt install rtl-433`. For other distributions see [repology](https://repology.org/project/rtl-433/versions) or [pkgs.org](https://pkgs.org/download/rtl-433).
 
-On MacOS, `brew install rtl_433`.
+FreeBSD: `pkg install rtl-433`.
+
+MacOS: `brew install rtl_433`.
 
 Docker images with rtl_433 are available [on the github page of hertzg](https://github.com/hertzg/rtl_433_docker).
 
@@ -403,6 +405,8 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [315]  Alps FWB1U545 Car Remote
     [316]  Continental KR5V2X Car Remote (-f 313.8M -s 1024k)
     [317]  Code Alarm FRDPC2002 Car Remote
+    [318]  RFM69 LowPowerLab Moteino board (-s 1000k)
+    [319]  Shenzhen Wale WL-TH6R Temperature & Humidity Sensor
 
 * Disabled by default, use -R n or a conf file to enable
 
@@ -475,7 +479,7 @@ Available options are:
 		use opt>=n to match at least <n> and opt<=n to match at most <n>
 	invert : invert all bits
 	reflect : reflect each byte (MSB first to MSB last)
-	decode_uart : UART 8n1 (10-to-8) decode
+	decode_uart=<8n1|8n2|8o1> : UART 8n1 (10-to-8), 8n2, 8o1 (11-to-8) decode
 	decode_dm : Differential Manchester decode
 	decode_mc : Manchester decode
 	match=<bits> : only match if the <bits> are found
