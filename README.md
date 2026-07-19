@@ -68,6 +68,7 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
   [-Y autolevel] Set minlevel automatically based on average estimated noise.
   [-Y squelch] Skip frames below estimated noise level to reduce cpu load.
   [-Y ampest | magest] Choose amplitude or magnitude level estimator.
+  [-Y filter=<value>] Manual FM low-pass filter cutoff to separate simultaneous transmissions: us (1-9999, e.g. 20), Hz (10000+), or ratio of sample rate (0.0-1.0).
 		= Analyze/Debug options =
   [-A] Pulse Analyzer. Enable pulse analysis and decode attempt.
        Disable all decoders with -R 0 if you want analyzer output only.
@@ -118,7 +119,7 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [24]* Brennenstuhl RCS 2044
     [25]  Globaltronics GT-WT-02 Sensor
     [26]  Danfoss CFR Thermostat
-    [29]  Chuango Security Technology
+    [29]* Chuango Security Technology
     [30]  Generic Remote SC226x EV1527
     [31]  TFA-Twin-Plus-30.3049, Conrad KW9010, Ea2 BL999
     [32]  Fine Offset Electronics WH1080/WH3080 Weather Station
@@ -165,7 +166,7 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [75]  LaCrosse TX35DTH-IT, TFA Dostmann 30.3155 Temperature/Humidity sensor
     [76]  LaCrosse TX29IT, TFA Dostmann 30.3159.IT Temperature sensor
     [77]  Vaillant calorMatic VRT340f Central Heating Control
-    [78]  Fine Offset Electronics, WH25, WH32, WH32B, WN32B, WH24, WH65B, HP1000, Misol WS2320 Temperature/Humidity/Pressure Sensor
+    [78]  Fine Offset Electronics, WH25, WH32, WH32B, WN32B, WH24, WH65, WS69, HP1000, Misol WS2320 Temperature/Humidity/Pressure Sensor
     [79]  Fine Offset Electronics, WH0530 Temperature/Rain Sensor
     [80]  IBIS beacon
     [81]  Oil Ultrasonic STANDARD FSK
@@ -180,7 +181,7 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [90]  Renault TPMS
     [91]  inFactory, nor-tec, FreeTec NC-3982-913 temperature humidity sensor
     [92]  FT-004-B Temperature Sensor
-    [93]  Ford Car Key
+    [93]* Ford Car Key
     [94]  Philips outdoor temperature sensor (type AJ3650)
     [95]  Schrader TPMS EG53MA4, Saab, Opel, Vauxhall, Chevrolet
     [96]  Nexa
@@ -200,11 +201,11 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [110]  PMV-107J (Toyota) TPMS
     [111]  Emos TTX201 Temperature Sensor
     [112]  Ambient Weather TX-8300 Temperature/Humidity Sensor
-    [113]  Ambient Weather WH31E Thermo-Hygrometer Sensor, EcoWitt WH40 rain gauge, WS68 weather station
+    [113]  Ambient Weather WH31E Thermo-Hygrometer Sensor, EcoWitt WH40/WN20 rain gauge, WS68 weather station
     [114]  Maverick ET73
     [115]  Honeywell ActivLink, Wireless Doorbell
     [116]  Honeywell ActivLink, Wireless Doorbell (FSK)
-    [117]* ESA1000 / ESA2000 Energy Monitor
+    [117]* ESA1000 / ESA2000 Energy Monitor, GIRA Wetterstation
     [118]* Biltema rain gauge
     [119]  Bresser Weather Center 5-in-1
     [120]  Digitech XC-0324 / AmbientWeather FT005TH temp/hum sensor
@@ -255,7 +256,7 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [165]  TFA Dostmann 30.3221.02 T/H Outdoor Sensor (also 30.3249.02)
     [166]  LaCrosse Technology View LTV-WSDTH01 Breeze Pro Wind Sensor
     [167]  Somfy RTS
-    [168]  Schrader TPMS SMD3MA4 (Subaru) 3039 (Infiniti, Nissan, Renault)
+    [168]  Schrader TPMS SMD3MA4 (Subaru)
     [169]* Nice Flor-s remote control for gates
     [170]  LaCrosse Technology View LTV-WR1 Multi Sensor
     [171]  LaCrosse Technology View LTV-TH Thermo/Hygro Sensor
@@ -278,7 +279,7 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [188]  Marlec Solar iBoost+ sensors
     [189]  Somfy io-homecontrol
     [190]  Ambient Weather WH31L (FineOffset WH57) Lightning-Strike sensor
-    [191]  Markisol, E-Motion, BOFU, Rollerhouse, BF-30x, BF-415 curtain remote
+    [191]* Markisol, E-Motion, BOFU, Rollerhouse, BF-30x, BF-415 curtain remote
     [192]  Govee Water Leak Detector H5054, Door Contact Sensor B5023
     [193]  Clipsal CMR113 Cent-a-meter power meter
     [194]  Inkbird ITH-20R temperature humidity sensor
@@ -286,8 +287,8 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [196]  Atech-WS308 temperature sensor
     [197]  Acurite Grill/Meat Thermometer 01185M
     [198]* EnOcean ERP1
-    [199]  Linear Megacode Garage/Gate Remotes
-    [200]* Auriol 4-LD5661/4-LD5972/4-LD6313 temperature/rain sensors
+    [199]* Linear Megacode Garage/Gate Remotes
+    [200]* Auriol 4-LD5661/4-LD5972/4-LD6313, Sempre 4-AH0423-4 temperature/rain sensors
     [201]  Unbranded SolarTPMS for trucks
     [202]  Funkbus / Instafunk (Berker, Gira, Jung)
     [203]  Porsche Boxster/Cayman TPMS
@@ -301,14 +302,14 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [211]  Regency Ceiling Fan Remote (-f 303.75M to 303.96M)
     [212]  Renault 0435R TPMS
     [213]  Fine Offset Electronics WS80 weather station
-    [214]  EMOS E6016 weatherstation with DCF77
+    [214]  EMOS E6016 weatherstation with DCF77, EMOS E6018 temperature/humidity sensor
     [215]  Emax W6, rebrand Altronics x7063/4/x7064A, Optex 990040/50/51, Orium 13093/13123, Infactory FWS-1200, Newentor Q9, Otio 810025, Protmex PT3390A, Jula Marquant 014331/32, TechniSat IMETEO X6 76-4924-00, Weather Station or temperature/humidity sensor
     [216]* ANT and ANT+ devices
     [217]  EMOS E6016 rain gauge
     [218]  Microchip HCS200/HCS300 KeeLoq Hopping Encoder based remotes (FSK)
     [219]  Fine Offset Electronics WH45 air quality sensor
     [220]  Maverick XR-30 BBQ Sensor
-    [221]  Fine Offset Electronics WN34S/L/D and Froggit DP150/D35 temperature sensor
+    [221]  Fine Offset Electronics WN34S/L/D, WN38 and Froggit DP150/D35 temperature sensor
     [222]  Rubicson Pool Thermometer 48942
     [223]  Badger ORION water meter, 100kbps (-f 916.45M -s 1200k)
     [224]  GEO minim+ energy monitor
@@ -335,7 +336,7 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [245]* ThermoPro TX-2C Thermometer and Humidity sensor
     [246]  TFA 30.3151 Weather Station
     [247]  Bresser water leakage
-    [248]* Nissan TPMS
+    [248]  Nissan TPMS
     [249]  Bresser lightning
     [250]  Schou 72543 Day Rain Gauge, Motonet MTX Rain, MarQuant Rain Gauge, TFA Dostmann 30.3252.01/47.3006.01 Rain Gauge and Thermometer, ADE WS1907
     [251]  Fine Offset / Ecowitt WH55 water leak sensor
@@ -347,7 +348,7 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [257]  BMW Gen2 and Gen3 TPMS
     [258]  Chamberlain CWPIRC PIR Sensor
     [259]  ThermoPro Meat Thermometers, TP829B 4 probes with temp only
-    [260]* Arad/Master Meter Dialog3G water utility meter
+    [260]  Arad/Master Meter Dialog3G water utility meter
     [261]  Geevon TX16-3 outdoor sensor
     [262]  Fine Offset Electronics WH46 air quality sensor
     [263]  Vevor Wireless Weather Station 7-in-1
@@ -391,7 +392,7 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [301]  Astrostart 2000 Car Remote (-f 372.4M)
     [302]  Compustar 1WG3R Car Remote
     [303]  Chrysler Car Remote (-f 315.1M -s 920k)
-    [304]  Nidec Car Remote (-f 313.8M -s 1024k)
+    [304]* Nidec Car Remote (-f 313.8M -s 1024k)
     [305]  Audiovox PRO-OE3B Car Remote (-f 303.4M)
     [306]  Microchip HCS361 KeeLoq Hopping Encoder based remotes (-f 315.1M) (Sync, 833 bit/s)
     [307]  Microchip HCS361 KeeLoq Hopping Encoder based remotes (-f 315.1M) (Sync, 1667 bit/s)
@@ -408,6 +409,66 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [318]  RFM69 LowPowerLab Moteino board (-s 1000k)
     [319]  Shenzhen Wale WL-TH6R Temperature & Humidity Sensor
     [320]  Cellular Tracking Technologies LifeTag/PowerTag/HybridTag
+    [321]  Schrader Motorcycle TPMS sensor
+    [322]  Gear Hive TPMS sensor
+    [323]  LaCrosse Technology TX22U-IT
+    [324]  LaCrosse Technology TX22U-IT (OOK)
+    [325]  Thermor A6N 132TX temperature sensor
+    [326]  Acurite/Chaney 985 Refrigerator / Freezer Thermometer
+    [327]  Honda Keyfob KR5V2X/1X (-f 433.6M -s 1024k)
+    [328]  Schrader TPMS MRXBC5A4 (BMW)
+    [329]  Microchip HCS362 KeeLoq PWM
+    [330]  Microchip HCS362 KeeLoq MC
+    [331]  RF-T0912 Grill Thermometer
+    [332]  TR-502MSV remote smart socket controller
+    [333]  Opel Mokka Car Key
+    [334]  RfxMeter, RFXPwr
+    [335]  Martec MPLCD Ceiling Fan Remote
+    [336]  NetAtmo temp/hum and wind sensors
+    [337]  Omni Multisensor
+    [338]  Elster/Honeywell R2S/REXU power meter
+    [339]  Florabest FB-TH-1 BBQ Thermometer
+    [340]  Holman Industries iWeather WS5029 weather station (older PWM, OOK), BIOWIN 270208
+    [341]  Esun EN2053 two-channel BBQ thermometer
+    [342]  Vivint Door/Window Sensor, V-DW21R-345
+    [343]  SmarTire TPMS sensor, Aston Martin/Vantage DB9 protocol
+    [344]* Dickert MAHS433-01 garage door remote control
+    [345]  FSL Cricket Scoreboard Controller
+    [346]  EN2058 four probe temperature sensor
+    [347]  TFA Dostmann 30.390X T/H sensors series
+    [348]  Watts WFHT-RF / WFHC-MASTERH&C-RF underfloor heating thermostat
+    [349]  Govee Pool/Spa Thermometer H5310
+    [350]  Govee H5112 Dual-Probe Thermometer
+    [351]  Eco-Eye solar PV/grid current monitor
+    [352]  Schrader TPMS MRXNIS315G3, 3039 (Infiniti, Nissan, Renault), aka Redi-Sensor SE10001HP/SE10001HPR
+    [353]  Fine Offset Electronics / Ecowitt WH52 Soil Moisture/Temperature/EC Sensor
+    [354]  iMars T240 TPMS
+    [355]  Jansite TPMS TY-468-eu2 / KKMOON TPMS
+    [356]* Agimex Rosenborg 66796 (collides with Fine Offset Electronics WH5) Temperature/Humidity Sensor
+    [357]  Auriol HG04641A temperature station
+    [358]  Eberle Instat 868r1 floor heating thermostat remote
+    [359]  Kingspan/Watchman Plus (Niveau) oil tank monitor
+    [360]  Baldr HCS528ARF Pool Thermometer sensor
+    [361]* Kidde RF-SM-DC wireless-interconnect smoke alarm
+    [362]  Jansite TPMS TY588-EU2
+    [363]  Oregon Scientific WMR500 weather station
+    [364]  Elsner Solexa 230V
+    [365]  Mercedes Benz Sprinter 4500 TPMS sensor
+    [366]  Watts Vision thermostat (-f 868.3M)
+    [367]  TFA 30.3307.02 Wind sensor
+    [368]  Cavius Door/Window sensor (-f 868.7M)
+    [369]* Cotech FT0203/18-3676 anemometer
+    [370]* 2GIG-KEY2E-345 encrypted keyfob
+    [371]* Hanwell ML/RL4000-series Radiologger temperature/humidity sensor
+    [372]  Elero bidirectional blinds/awning remote (Silent Gliss and others)
+    [373]  Elster/Honeywell R2S/REXU power meter, type-2 frames
+    [374]  LaCrosse WS6868 TX232TH-LCD temperature/humidity sensor
+    [375]  LaCrosse WS6868 TX231RW wind/rain sensor
+    [376]  McPower Kinetic battery-less wall switch
+    [377]  Typhur Sync Gold meat thermometer probe
+    [378]  Sefis M3 / Careud / Sykik SRTP300 TPMS
+    [379]  RADIAN/RADIAN0 meter
+    [380]* Jeep TPMS
 
 * Disabled by default, use -R n or a conf file to enable
 
@@ -591,7 +652,6 @@ E.g. -X "n=doorbell,m=OOK_PWM,s=400,l=800,r=7000,g=1000,match={24}0xa9878c,repea
 
 ```
 
-
 Some examples:
 
 | Command | Description
@@ -601,6 +661,7 @@ Some examples:
 | `rtl_433 -f 868M -s 1024k` | Listen at 868 MHz and 1024k sample rate.
 | `rtl_433 -M hires -M level` | Report microsecond accurate timestamps and add reception levels (depending on gain).
 | `rtl_433 -R 1 -R 8 -R 43` | Enable only specific decoders for desired devices.
+| `rtl_433 -R -216 -R 216` | Enable all default decoders plus a decoder disabled by default (216).
 | `rtl_433 -A` | Enable pulse analyzer. Summarizes the timings of pulses, gaps, and periods. Can be used with `-R 0` to disable decoders.
 | `rtl_433 -S all -T 120` | Save all detected signals (`g###_###M_###k.cu8`). Run for 2 minutes.
 | `rtl_433 -K FILE -r file_name` | Read a saved data file instead of receiving live data. Tag output with filenames.
@@ -621,7 +682,6 @@ Network inputs and outputs are for use in a trusted local network, will contain 
 
 Join the Google group, rtl_433, for more information about rtl_433:
 https://groups.google.com/forum/#!forum/rtl_433
-
 
 ## Troubleshooting
 

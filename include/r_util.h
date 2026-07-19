@@ -105,6 +105,13 @@ float kmph2mph(float kph);
 */
 float mph2kmph(float mph);
 
+/** Convert Meters per second (m/s) to Miles per hour (mph).
+
+    @param mps speed in meters per second
+    @return speed in miles per hour
+*/
+float mps2mph(float mps);
+
 /** Convert millimeters (mm) to inches (inch).
 
     @param mm measurement in millimeters
@@ -170,6 +177,6 @@ char *str_replace(char const *orig, char const *rep, char const *with);
 
     @param freq the frequency to convert to a string.
 */
-char const *nice_freq (double freq);
+char const *nice_freq(double freq);
 
 #endif /* INCLUDE_R_UTIL_H_ */
