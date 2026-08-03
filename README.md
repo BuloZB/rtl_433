@@ -3,7 +3,12 @@
 rtl_433 (despite the name) is a generic data receiver, mainly for the 433.92 MHz, 868 MHz (SRD), 315 MHz, 345 MHz, and 915 MHz ISM bands.
 
 The official source code is in the https://github.com/merbanan/rtl_433/ repository.
-For more documentation and related projects see the https://triq.org/ site.
+
+See also [a list of software that works with
+rtl_433](https://github.com/merbanan/rtl_433/wiki/Built-with-rtl_433!)
+in the wiki.
+For more documentation and related projects, particularly those that
+help with rtl_433 development, see the https://triq.org/ site.
 
 It works with [RTL-SDR](https://github.com/osmocom/rtl-sdr/) and/or [SoapySDR](https://github.com/pothosware/SoapySDR/).
 Actively tested and supported are Realtek RTL2832 based DVB dongles (using RTL-SDR) and LimeSDR ([LimeSDR USB](https://www.crowdsupply.com/lime-micro/limesdr) and [LimeSDR mini](https://www.crowdsupply.com/lime-micro/limesdr-mini) engineering samples kindly provided by [MyriadRf](https://myriadrf.org/)), PlutoSDR, HackRF One (using SoapySDR drivers), as well as SoapyRemote.
@@ -210,7 +215,7 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [119]  Bresser Weather Center 5-in-1
     [120]  Digitech XC-0324 / AmbientWeather FT005TH temp/hum sensor
     [121]  Opus/Imagintronix XT300 Soil Moisture
-    [122]  FS20 / FHT
+    [122]* FS20 / FHT
     [123]* Jansite TPMS Model TY02S
     [124]  LaCrosse/ELV/Conrad WS7000/WS2500 weather sensors
     [125]  TS-FT002 Wireless Ultrasonic Tank Liquid Level Meter With Temperature Sensor
@@ -471,6 +476,8 @@ See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
     [380]* Jeep TPMS
     [381]  Honda (TRW PPA-GF33) TPMS
     [382]* Cotech 36-7900 rain gauge
+    [383]  Silver Spring Networks mesh endpoint (-s 1600k)
+    [384]  Bresser SmartHome Garden soil moisture and water timer valve (Baldr Homgar, RainPoint)
 
 * Disabled by default, use -R n or a conf file to enable
 

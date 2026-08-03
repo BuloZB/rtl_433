@@ -86,6 +86,7 @@ add_library(r_433 STATIC
     devices/bresser_5in1.c
     devices/bresser_6in1.c
     devices/bresser_7in1.c
+    devices/bresser_garden.c
     devices/bresser_leakage.c
     devices/bresser_lightning.c
     devices/bresser_st1005h.c
@@ -287,6 +288,7 @@ add_library(r_433 STATIC
     devices/sharp_spc775.c
     devices/shenzhen_wale_wl_th6r.c
     devices/siemens_5wy72xx.c
+    devices/silver_spring_mesh.c
     devices/silvercrest.c
     devices/simplisafe.c
     devices/simplisafe_gen3.c
